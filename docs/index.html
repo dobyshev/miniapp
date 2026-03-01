@@ -46,7 +46,13 @@
     
     const tg = window.Telegram.WebApp;
     tg.expand();
+    tg.MainButton.setText("Отправить данные");
+tg.MainButton.show();
 
+tg.MainButton.onClick(function () {
+  tg.sendData("TEST_FROM_MAIN_BUTTON");
+});
+    
     const user = tg.initDataUnsafe.user;
 
     if (user) {
@@ -58,7 +64,7 @@
       tg.showAlert("Кнопка работает ✅");
     });
 
-    document.getElementById("sendBtn").addEventListener("click", function () {
+   ("click", function () {
       tg.sendData("TEST_123");
     });
   </script>
